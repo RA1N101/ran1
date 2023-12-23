@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dogs</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('background.jpg') center/cover no-repeat;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .lock-screen {
+      width: 400px;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .lock-screen p#time {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    .lock-screen h2 {
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    .lock-screen input {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border: 1px solid #888;
+      border-radius: 5px;
+      background: #111;
+      color: #fff;
+      font-size: 1em;
+    }
+
+    .lock-screen button {
+      background: #0078d4;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="lock-screen">
+    <p id="time"></p>
+    <h2>Welcome to RA1N</h2>
+    <input type="password" id="passwordInput" placeholder="Enter login password">
+    <button onclick="checkPassword()">Login</button>
+  </div>
+
+  <script>
+    function checkPassword() {
+      var enteredPassword = document.getElementById('passwordInput').value;
+      var adminPassword = "XXADMINMODEXX";
+      var userPassword = "YooBroRA1N";
+      var ae = "ae";
+      var proxbox123 = "proxbox123";
+      var ra1nold = "ra1nold";
+
+      if (enteredPassword === adminPassword) {
+        console.log("Admin password is correct. Redirecting to ADMIN.html...");
+        // Redirect to ADMIN.html
+        window.location.href = 'ADMIN.html';
+      } else if (enteredPassword === userPassword) {
+        console.log("User password is correct. Redirecting to RA1N.html...");
+        // Redirect to RA1N.html
+        window.location.href = 'SYSCHECK.html';
+      } else if (enteredPassword === ae) {
+        console.log("User password is correct. Redirecting to ae.html...");
+        // Redirect to RA1N.html
+        window.location.href = 'ae.html';
+      } else if (enteredPassword === proxbox123) {
+        console.log("User password is correct. Redirecting to prox.html...");
+        // Redirect to RA1N.html
+        window.location.href = 'proxbox123.html';
+        else if (enteredPassword === ra1nold) {
+        console.log("User password is correct. Redirecting to ra1nold.html...");
+        // Redirect to ra1nold.html
+        window.location.href = 'ra1nold.html';
+      } else {
+        console.error("Incorrect password. Try again.");
+        alert("Incorrect password. Try again.");
+      }
+    }
+
+    // Update time every second
+    setInterval(function() {
+      var timeElement = document.getElementById('time');
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+      timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+    }, 1000);
+  </script>
+</body>
+</html>

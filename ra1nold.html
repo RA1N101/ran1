@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RA1N Access</title>
+    <style>
+        #accessCode, #submitButton {
+            display: none; /* Hide the input and submit button initially */
+        }
+
+        /* Reset default margin and padding for better consistency */
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style for the menu container */
+        ul.menu {
+            list-style-type: none;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /* Style for each menu item */
+        ul.menu li {
+            float: left;
+        }
+
+        /* Style for menu item links */
+        ul.menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 18px;
+        }
+
+        /* Hover effect for menu items */
+        ul.menu li a:hover {
+            background-color: #555;
+        }
+
+        /* Style for the page title */
+        h1 {
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Style for the content sections */
+        .content {
+            display: none;
+            padding: 20px;
+            background-color: lightgray;
+        }
+
+        /* Style for the Games section */
+        #games-content {
+            background-color: lightgray;
+        }
+
+        /* Style for the Snake Game */
+        #snake-game {
+            border: 1px solid white;
+            display: block;
+            margin: 0 auto;
+            outline: none; /* Remove focus outline */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+    </style>
+</head>
+<body>
+     <script>
+        // Disable arrow key scrolling on the entire page
+        window.addEventListener("keydown", function (e) {
+            // Check if the pressed key is an arrow key (keyCode 37 to 40)
+            if (e.key === "ArrowUp" || e.key === "ArrowDown" || e.key === "ArrowLeft" || e.key === "ArrowRight") {
+                e.preventDefault(); // Prevent the default scroll behavior
+            }
+        });
+    </script>
+    <h1>RA1N</h1>
+    <ul class="menu">
+        <li><a href="#home" target="_self">Home </a></li>
+        <li><a href="#games" target="_self">Games</a></li>
+        <li><a href="#Proxy" target="_self">Proxy</a></li>
+        <li><a href="#YOUTUBEVIDEO" target="_self">Youtube Video Downloader</a></li>
+        <li><a href="#linkedits" target="_self">Link Shortener</a></li>
+        <li><a href="#updatelogg" target="_self">Updates</a></li>
+        <li><a href="#Reasonimaderain" target="_self">RA1N's Reason</a></li>
+        <li><a href="#contact" target="_self">Contact</a></li>
+    </ul>
+    
+    <!-- Home Section -->
+    <div id="home-content" class="content">
+        <h2>Welcome to RA1N!</h2>
+        <h2>READ THE DOC AT THE BOTTOM</h2>
+        <p>After all this time, RA1N has finally succeeded. After going from a chunky google site to a custom domain, and now we are a file.  We are unstoppable. We can't be blocked. We finally have done the impossible. Weve made games and a proxy. all with HTML Code. Any more stuff that you would like added, press this button and tell me what you would like in the google form.</p>
+        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScOWRjjnolohRtnKTtk2UqB7bCBEYZHmNAVc-bPvRLHTJzFgw/viewform?vc=0&c=0&w=1&flr=0&usp=mail_form_link', '_blank')">Google Form</button>
+        <p>This is the single filed version of RA1N that is better.</p>
+        <p>In the proxy, you need to open "incog.dev" to use the proxy.</p>
+        <p>Please read the update log as there may be something important. Anything crucial will be listed here</p>
+        <iframe src="https://docs.google.com/document/d/165aoAHRRUInII0MipxFCFZ4DJ25eIY9ctY2WpAJPO7w/edit?usp=sharing" width="1150" height="650"></iframe>
+    </div>
+
+    <!-- Games Section -->
+    <div id="games-content" class="content">
+
+        <!-- Embed the first website -->
+        <iframe src="https://tbg95.github.io/" width="1250" height="650"></iframe>
+
+        <!-- Embed the second website -->
+        <iframe src="https://www.jordansmathwork.tk/gs/normal.html" width="1250" height="650" sandbox="allow-same-origin"></iframe>
+
+        <!-- Embed the Third website -->
+        <iframe src="https://ad-freegames.github.io/" width="1250" height="650"></iframe>
+
+        <!-- Embed the Fourth website -->
+        <iframe src="https://play2online.com/" width="1250" height="650"></iframe>
+
+
+
+        <!-- Clicker Game -->
+        <h2>Clicker Game</h2>
+        <div id="clicker-game-container">
+            <div id="clicker-cookie">Click Me!</div>
+            <div id="clicker-score">Score: 0</div>
+        </div>
+
+        <!-- Snake Game -->
+        <h2>Snake Game</h2>
+        <canvas id="snake-game" width="400" height="400" tabindex="0"></canvas>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact-content" class="content">
+        <h2>Contact</h2>
+        <p>You can contact me at : sitehelpra1n@gmail.com or (205) - 635 - 0975</p>
+        <p>Id love to hear any feedback You Have For Me.</p>
+    </div>
+
+    <!-- JavaScript for menu functionality -->
+    <script>
+        // Function to show the selected content section based on the anchor
+        function showContent(anchor) {
+            // Hide all content sections
+            var contentSections = document.querySelectorAll('.content');
+            contentSections.forEach(function (section) {
+                section.style.display = 'none';
+            });
+
+            // Show the selected content section
+            var selectedSection = document.getElementById(anchor + '-content');
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+
+        // Handle clicks on menu items
+        var menuItems = document.querySelectorAll('.menu li a');
+        menuItems.forEach(function (item) {
+            item.addEventListener('click', function (event) {
+                var anchor = this.getAttribute('href').substring(1); // Remove the '#'
+                showContent(anchor);
+            });
+        });
+
+        // Show the Home section by default
+        showContent('home');
+    </script>
+
+    <!-- Snake Game -->
+    <script>
+        var canvas = document.getElementById('snake-game');
+        var context = canvas.getContext('2d');
+
+        // the canvas width & height, snake x & y, and the apple x & y, all need to be multiples of the grid size for collision detection
+        var grid = 16;
+        var count = 0;
+
+        var snake = {
+            x: 160,
+            y: 160,
+            dx: grid,
+            dy: 0,
+            cells: [],
+            maxCells: 4
+        };
+
+        var apple = {
+            x: 320,
+            y: 320
+        };
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function loop() {
+            requestAnimationFrame(loop);
+
+            if (++count < 4) {
+                return;
+            }
+
+            count = 0;
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            snake.x += snake.dx;
+            snake.y += snake.dy;
+
+            if (snake.x < 0) {
+                snake.x = canvas.width - grid;
+            } else if (snake.x >= canvas.width) {
+                snake.x = 0;
+            }
+
+            if (snake.y < 0) {
+                snake.y = canvas.height - grid;
+            } else if (snake.y >= canvas.height) {
+                snake.y = 0;
+            }
+
+            snake.cells.unshift({ x: snake.x, y: snake.y });
+
+            if (snake.cells.length > snake.maxCells) {
+                snake.cells.pop();
+            }
+
+            context.fillStyle = 'red';
+            context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
+
+            context.fillStyle = 'green';
+            snake.cells.forEach(function (cell, index) {
+                context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
+
+                if (cell.x === apple.x && cell.y === apple.y) {
+                    snake.maxCells++;
+                    apple.x = getRandomInt(0, canvas.width / grid) * grid;
+                    apple.y = getRandomInt(0, canvas.height / grid) * grid;
+                }
+
+                for (var i = index + 1; i < snake.cells.length; i++) {
+                    if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+                        snake.x = 160;
+                        snake.y = 160;
+                        snake.cells = [];
+                        snake.maxCells = 4;
+                        snake.dx = grid;
+                        snake.dy = 0;
+
+                        apple.x = getRandomInt(0, canvas.width / grid) * grid;
+                        apple.y = getRandomInt(0, canvas.height / grid) * grid;
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.which === 37 && snake.dx === 0) {
+                snake.dx = -grid;
+                snake.dy = 0;
+            } else if (e.which === 38 && snake.dy === 0) {
+                snake.dy = -grid;
+                snake.dx = 0;
+            } else if (e.which === 39 && snake.dx === 0) {
+                snake.dx = grid;
+                snake.dy = 0;
+            } else if (e.which === 40 && snake.dy === 0) {
+                snake.dy = grid;
+                snake.dx = 0;
+            }
+        });
+
+        requestAnimationFrame(loop);
+    </script>
+
+    <!-- Youtube Video Downloader Section -->
+    <div id="YOUTUBEVIDEO-content" class="content">
+        <h2>You can download YouTube videos that you like or can't watch for any reason.</h2>
+        <iframe src="https://ytmp3.cc/" width="1250" height="650"></iframe>
+    </div>
+
+    <!-- Link Shortener Section -->
+    <div id="linkedits-content" class="content">
+        <h2>This literally shortens your links to something memorable like https://rb.gy/lv97z, for example.</h2>
+        <iframe src="https://free-url-shortener.rb.gy/" width="1250" height="650"></iframe>
+    </div>
+
+    <!-- Proxy Section -->
+    <div id="Proxy-content" class="content">
+        <h2>We don't talk about the name...</h2>
+        <h2>Basically  what this does is hides your search history. </h2>
+        <h1>In order to use the proxy as an unblocker, you need to search "incog.dev" and click the first link.</h1>
+        <iframe src="https://swisscows.com/en" width="1250" height="650"></iframe>
+    </div>
+
+    <!-- Update Section -->
+    <div id="updatelogg-content" class="content">
+        <h2>This is the update log. Everytime I update RA1N, The update and the feature will be shown here.</h2>
+        <p>1.0: Version 1.0 ready for public use</p>
+        <p>1.1: removed "AI Chat" page so that I can fix blocked issue</p>
+        <p>1.2 JMW removed as a result to the inappropriate ads.</p>
+        <p>1.3: Exploit blocked; webpage shut down as a result to the GoGuardian update</p>
+        <p>2.0: Major changes were made. Added more games, programmed and embedded. created beta version of GG-UN1. Website was back up and running.</p>
+        <p>2.5: Added a terminal and Readded the AI Chat page as i found a way for the bot to communicate directly to OpenAI.</p>
+        <p>2.6: Put AI Chat to the side for now as I found out how to access any website though a server located outside of school. Also removed the terminal and replaced it with a simpler version to the UI (User Interface)</p>
+        <p>3.0: I'm disguising the page to look like a doggy enthusiast site.</p>
+        <p>4.0: RA1N is now one file, and cant be blocked. Proxy is looking good as well. If I need to get a new domain, the process will be much easier.</p>
+        <p>4.1: Pretty simple, just combined the "Dog Stuff" with RA1N so that it's harder for teachers to suspect anything.</p>
+    </div>
+
+    <!-- Update Section -->
+    <div id="Reasonimaderain-content" class="content">
+        <h1>The reason I made RA1N is because</h1>
+        <h2>I hate restrictions.</h2>
+        <p>The main reason I thought about creating RA1N in the first place was GoGuardian's strict restrictions. It's a pain when a tool designed to keep us safe ends up being a roadblock to what we love. In my case, it's programming. Just because we're kids doesn't mean we're clueless. We can think and spot bad stuff. The problem is these restrictions go overboard. I'm all for some rules, but there are just way too many. So, I started RA1N to find a balance. We get why safety is important, but there's got to be a middle ground. With RA1N, we aim to break free from excessive controls and build a place where we can learn and explore without feeling hemmed in. It's not about being rebellious; it's about having the freedom to grow responsibly in the digital world. That's what RA1N is all about.</p>   
+    </div>
+
+ </body>
+</html>

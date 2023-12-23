@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Button</title>
+  <style>
+    /* Center the button */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 5vh;
+      margin: 0;
+    }
+
+    /* Style the button to look like plain text */
+    .secret-button {
+      background: none;
+      border: none;
+      color: rgb(0, 0, 0); /* Change the color to your preference */
+      text-decoration: none;
+      cursor: pointer;
+      padding: 0; /* Remove padding to make it more like plain text */
+      font-size: inherit; /* Inherit font size for better responsiveness */
+      font-family: Arial, Helvetica, sans-serif; /* Inherit font family for better compatibility */
+      display: inline; /* Make it inline to avoid the button appearance */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Your centered secret button -->
+<button class="secret-button" onclick="handleButtonClick()">I absolutely love dogs</button>
+
+<!-- JavaScript function to handle button click (replace this with your logic) -->
+<script>
+  function handleButtonClick() {
+    window.location.href = 'lockscreen.html';
+    // Add your custom logic here
+  }
+</script>
+
+</body>
+</html>

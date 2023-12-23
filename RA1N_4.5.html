@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #0448ad;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            visibility: hidden;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .nav-list.show {
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .nav-item {
+            margin-right: 20px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .nav-list.show .nav-item {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .bar.active1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .bar.active2 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Footer Styles */
+       footer {
+        background-color: #0448ad;
+        color: #fff;
+        padding: 5px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    <div class="title" style="color: rgb(255, 255, 255); font-size: 18;">RA1N</div>
+     <ul class="nav-list">
+        <div class="nav-item"><li><a href="#home" onclick="toggleSection('home')">Home</a></li></div>
+        <div class="nav-item"><li><a href="#games" onclick="toggleSection('games')">Games</a></li></div>
+        <div class="nav-item"><li><a href="#proxy" onclick="toggleSection('proxy')">Proxy</a></li></div>
+        <div class="nav-item"><li><a href="#other" onclick="toggleSection('other')">other</a></li></div>
+     </ul>
+    </div>
+
+<div id="home" class="section active">
+    <h2>Welcome to RA1N!</h2>
+    <h2>READ THE DOC AT THE BOTTOM</h2>
+    <p>This is the single filed version of RA1N that is better.</p>
+    <p>In the proxy, you need to open "incog.dev" to use the proxy.</p>
+    <p>Anything that you would like added, press this button and tell me what you would like in the google form.</p>
+    <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScOWRjjnolohRtnKTtk2UqB7bCBEYZHmNAVc-bPvRLHTJzFgw/viewform?vc=0&c=0&w=1&flr=0&usp=mail_form_link', '_blank')">Google Form</button>
+    <p>Please read the update log as there may be something important. Anything crucial will be listed here</p>
+    <iframe src="https://docs.google.com/document/d/165aoAHRRUInII0MipxFCFZ4DJ25eIY9ctY2WpAJPO7w/edit?usp=sharing" width="1150" height="650"></iframe>
+    <h2>This is the update log. Everytime I update RA1N, The update and the feature will be shown here.</h2>
+    <p>1.0: Version 1.0 ready for public use</p>
+    <p>1.1: removed "AI Chat" page so that I can fix blocked issue</p>
+    <p>1.2: JMW removed as a result to the inappropriate ads.</p>
+    <p>1.3: Exploit blocked; webpage shut down as a result to the GoGuardian update</p>
+    <p>2.0: Major changes were made. Added more games, programmed and embedded. created beta version of GG-UN1. Website was back up and running.</p>
+    <p>2.5: Added a terminal and Readded the AI Chat page as i found a way for the bot to communicate directly to OpenAI.</p>
+    <p>2.6: Put AI Chat to the side for now as I found out how to access any website though a server located outside of school. Also removed the terminal and replaced it with a simpler version to the UI (User Interface)</p>
+    <p>3.0: I'm disguising the page to look like a doggy enthusiast site.</p>
+    <p>4.0: RA1N is now one file, and cant be blocked. Proxy is looking good as well. If I need to get a new domain, the process will be much easier.</p>
+    <p>4.1: Pretty simple, just combined the "Dog Stuff" with RA1N so that it's harder for teachers to suspect anything.</p>
+    <p>4.5: Honestly took a good while, got bored of the bland look and ended up adding color</p>
+    <p>.</p>
+    <h1>The reason I made RA1N is because</h1>
+    <h2>I hate restrictions.</h2>
+    <p>The main reason I thought about creating RA1N in the first place was GoGuardian's strict restrictions. It's a pain when a tool designed to keep us safe ends up being a roadblock to what we love. In my case, it's programming. Just because we're kids doesn't mean we're clueless. We can think and spot bad stuff. The problem is these restrictions go overboard. I'm all for some rules, but there are just way too many. So, I started RA1N to find a balance. We get why safety is important, but there's got to be a middle ground. With RA1N, we aim to break free from excessive controls and build a place where we can learn and explore without feeling hemmed in. It's not about being rebellious; it's about having the freedom to grow responsibly in the digital world. That's what RA1N is all about.</p>   
+    <p>.</p>
+    <h2>Contact</h2>
+    <p>You can contact me at : sitehelpra1n@gmail.com or (205) - 635 - 0975</p>
+    <p>Id love to hear any feedback You Have For Me.</p>
+    <p>.</p>
+    <p>.</p>
+</div>
+
+<div id="games" class="section">
+  <!-- Embed the first website -->
+  <iframe src="https://tbg95.github.io/" width="100%" height="650"></iframe>
+
+  <!-- Embed the second website -->
+  <iframe src="https://www.jordansmathwork.tk/gs/normal.html" width="100%" height="650" sandbox="allow-same-origin"></iframe>
+
+  <!-- Embed the Third website -->
+  <iframe src="https://ad-freegames.github.io/" width="100%" height="650"></iframe>
+
+  <!-- Embed the Fourth website -->
+  <iframe src="https://play2online.com/" width="100%" height="650"></iframe>
+
+  <!-- Sixth link -->
+  <iframe src="https://neal.fun/" width="100%" height="650"></iframe>
+
+
+    <p>.</p>
+    <p>.</p>
+</div>
+
+<div id="proxy" class="section">
+    <h2>We don't talk about the name...</h2>
+    <h2>Basically  what this does is hides your search history. </h2>
+    <h1>In order to use the proxy as an unblocker, you need to search "incog.dev" and click the first link.</h1>
+    <iframe src="https://swisscows.com/en" width="1150" height="650"></iframe> 
+</div>
+
+<div id="other" class="section">
+ <p> for the other stuff, click this button</p>
+ <button type="button" onclick="otherstuff()">The Other Stuff</button>
+ <button type="button" onclick="otherra1n()">The Other RA1N</button>
+
+</div>
+
+
+
+  <footer>
+    <p>&copy; 2022-2024 RA1N. All rights reserved.</p>
+  </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuButton = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+        const bars = document.querySelectorAll('.bar');
+
+        mobileMenuButton.addEventListener('click', function () {
+            navList.classList.toggle('show');
+            bars.forEach(bar => bar.classList.toggle('active1'));
+            bars[1].classList.toggle('active2');
+        });
+    });
+
+    function toggleSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => section.classList.remove('active'));
+        
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+    }
+
+    function otherstuff() {
+        window.location.href = 'other.html';
+    }
+
+    function otherra1n() {
+        window.location.href = 'newra1ntestt.html'
+    }
+</script>
+
+</body>
+</html>
