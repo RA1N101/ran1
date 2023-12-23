@@ -69,39 +69,40 @@
   </div>
 
   <script>
-    function checkPassword() {
-      var enteredPassword = document.getElementById('passwordInput').value;
-      var adminPassword = "XXADMINMODEXX";
-      var userPassword = "YooBroRA1N";
-      var ae = "ae";
-      var proxbox123 = "proxbox123";
-      var ra1nold = "ra1nold";
+function checkPassword() {
+  var enteredPassword = document.getElementById('passwordInput').value;
+  var adminPassword = "XXADMINMODEXX";
+  var userPassword = "YooBroRA1N";
+  var ae = "ae";
+  var proxbox123 = "proxbox123";
+  var ra1nold = "ra1nold";
 
-      if (enteredPassword === adminPassword) {
-        console.log("Admin password is correct. Redirecting to ADMIN.html...");
-        // Redirect to ADMIN.html
-        window.location.href = 'ADMIN.html';
-      } else if (enteredPassword === userPassword) {
-        console.log("User password is correct. Redirecting to RA1N.html...");
-        // Redirect to RA1N.html
-        window.location.href = 'SYSCHECK.html';
-      } else if (enteredPassword === ae) {
-        console.log("User password is correct. Redirecting to ae.html...");
-        // Redirect to RA1N.html
-        window.location.href = 'ae.html';
-      } else if (enteredPassword === proxbox123) {
-        console.log("User password is correct. Redirecting to prox.html...");
-        // Redirect to RA1N.html
-        window.location.href = 'proxbox123.html';
-        else if (enteredPassword === ra1nold) {
-        console.log("User password is correct. Redirecting to ra1nold.html...");
-        // Redirect to ra1nold.html
-        window.location.href = 'ra1nold.html';
-      } else {
-        console.error("Incorrect password. Try again.");
-        alert("Incorrect password. Try again.");
-      }
-    }
+  if (enteredPassword === adminPassword) {
+    console.log("Admin password is correct. Redirecting to ADMIN.html...");
+    // Redirect to ADMIN.html
+    window.location.href = 'ADMIN.html';
+  } else if (enteredPassword === userPassword) {
+    console.log("User password is correct. Redirecting to RA1N.html...");
+    // Redirect to RA1N.html
+    window.location.href = 'SYSCHECK.html';
+  } else if (enteredPassword === ae) {
+    console.log("User password is correct. Redirecting to ae.html...");
+    // Redirect to RA1N.html
+    window.location.href = 'ae.html';
+  } else if (enteredPassword === proxbox123) {
+    console.log("User password is correct. Redirecting to prox.html...");
+    // Redirect to RA1N.html
+    window.location.href = 'proxbox123.html';
+  } else if (enteredPassword === ra1nold) {
+    console.log("User password is correct. Redirecting to ra1nold.html...");
+    // Redirect to ra1nold.html
+    window.location.href = 'ra1nold.html';
+  } else {
+    console.error("Incorrect password. Try again.");
+    alert("Incorrect password. Try again.");
+  }
+}
+
 
     // Update time every second
     setInterval(function() {
