@@ -76,6 +76,7 @@ function checkPassword() {
   var ae = "ae";
   var proxbox123 = "proxbox123";
   var ra1nold = "ra1nold";
+  var help = "ipurchasedra1n";
 
   if (enteredPassword === adminPassword) {
     console.log("Admin password is correct. Redirecting to ADMIN.html...");
@@ -85,6 +86,11 @@ function checkPassword() {
     console.log("User password is correct. Redirecting to RA1N.html...");
     // Redirect to RA1N.html
     window.location.href = 'SYSCHECK.html';
+
+    
+  } else if (enteredPassword === help) {
+    console.log("one sec...");
+    window.location.href = 'help.txt'; 
   } else if (enteredPassword === ae) {
     console.log("User password is correct. Redirecting to ae.html...");
     // Redirect to RA1N.html
